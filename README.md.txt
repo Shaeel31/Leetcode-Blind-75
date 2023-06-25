@@ -7,11 +7,7 @@ and solving these problems is an excellent way to strengthen your algorithmic pr
 Contents
 In this repository, you will find the following:
 
-Solution files: Each problem has its own solution file with a descriptive name, along with the corresponding solution code. The solutions are written in a variety of programming languages, making it accessible for developers with different language preferences.
-
-Problem descriptions: Alongside the solution files, you will also find markdown files containing the problem descriptions. These files provide a clear understanding of the problem statement, constraints, and any specific requirements.
-
-Test cases: For each problem, a set of test cases is provided to help you validate the correctness of your solution. These test cases cover different scenarios and edge cases, ensuring that your implementation is robust and handles various inputs correctly.
+Solution files: Each problem has its own solution file with a descriptive name, along with the corresponding solution code.
 
 Hints and explanations: Some solution files may also include additional explanations or hints to help you understand the thought process behind the solution. These insights can be valuable for improving your problem-solving skills and learning new techniques.
 
