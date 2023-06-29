@@ -17,7 +17,8 @@ var productExceptSelf = function (nums) {
 return resultant;
 }
 
-productExceptSelf([1,2,3,4])
+// Time Complexity = O(N)
+// Space Complexity = 0(N)
 
 
 // 2nd Soloution with O(N) time complexity
@@ -42,11 +43,7 @@ var productExceptSelf = function (nums) {
    return output_arr;
 }
 
-productExceptSelf([1, 2, 3, 4])
-
-
 // Time Complexity O(N)
-// Space Complexity o(N)
 
 
 
