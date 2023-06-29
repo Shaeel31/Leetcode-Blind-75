@@ -3,16 +3,15 @@
 // Soloution 1 - With 0(N) Time Complexity
 
 /**
- * @param {string} s
+ * @param {string} string
  * @return {boolean}
  */
-var isPalindrome = function (s) {
-    s = s.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "").replace(/ /g, '');
-    s = s.split('');
+const isPalindrome = function (string) {
+    string = (string.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "").replace(/ /g, '')).split('') ;
     let l = 0;
-    let r = s.length - 1
+    let r = string.length - 1
     while (l < r) {
-        if (s[l] == s[r]) {
+        if (string[l] == string[r]) {
             l++;
             r--
         }
@@ -25,8 +24,10 @@ var isPalindrome = function (s) {
 
 // Soloution 2 - Shorter Version
 
-var isPalindrome = function (string) {
-    string = string.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "").replace(/ /g, '')
-    return(( string) === string.split('').reverse().join(''))
-};
+// const isPalindrome = function (string) {
+//     string = string.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "").replace(/ /g, '')
+//     return(( string) === string.split('').reverse().join(''))
+// };
+
+isPalindrome("race a car")
 
