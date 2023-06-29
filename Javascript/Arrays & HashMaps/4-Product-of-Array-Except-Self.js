@@ -19,3 +19,8 @@ return resultant;
 
 productExceptSelf([1,2,3,4])
 
+
+// Time Complexity O(N)
+// Space Complexity o(N)
+
+
