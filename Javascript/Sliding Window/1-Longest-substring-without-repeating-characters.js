@@ -9,7 +9,7 @@ var lengthOfLongestSubstring = function (s) {
         if (!set.has(s[r_pointer])) {
             set.add(s[r_pointer]);
             r_pointer++
-            max =Math.max(max , set.size );
+            max = Math.max(max, set.size);
         }
         else {
             set.delete(s[l_pointer])
@@ -22,5 +22,5 @@ var lengthOfLongestSubstring = function (s) {
 lengthOfLongestSubstring("abcabcbb")
 
 
-// Time Complexity O(N)
+ // Time Complexity O(N)
 // Space Complexity O(N)
