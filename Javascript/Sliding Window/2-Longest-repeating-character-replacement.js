@@ -31,6 +31,8 @@ var characterReplacement = function (s, k) {
 characterReplacement("BAAA", 0)
 
 
+//Complexity : O(N * 26)
+
 
 //Formula :
 // window_length - max_freq <= k
