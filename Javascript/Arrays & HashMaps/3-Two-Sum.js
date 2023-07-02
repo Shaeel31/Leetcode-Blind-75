@@ -19,3 +19,5 @@ return result
 
 
 // Time Complexity O(n)
+
+//Formula = x = target - cur_value
