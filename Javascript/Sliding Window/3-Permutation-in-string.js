@@ -3,28 +3,39 @@
  * @param {string} s2
  * @return {boolean}
  */
+
 var checkInclusion = function (s1, s2) {
+	let freqS1 = new Array(26).fill(0);
+	let freqS2 = new Array(26).fill(0)
 
 	if (s1.length > s2.length) return false;
-	let neededChar = {}; 
-	for (let i = 0; i < s1.length; i++) {
-		neededChar[s1[i]] = (neededChar[s1[i]] || 0) + 1;
-	}
-	let left = 0, right = 0, requiredLength = s1.length;
-	while (right < s2.length) {
+	for (const el of s1) freqS1[el.charCodeAt(0) - 'a'.charCodeAt(0)]++;
+	let i_pointer = 0;
+	let j_pointer = 0;
 
-		if (neededChar[s2[right]] > 0) requiredLength--;
-
-		neededChar[s2[right]]--;
-		right++;
-		if (requiredLength === 0) return true;
-		if (right - left === s1.length) {
-			if (neededChar[s2[left]] >= 0) requiredLength++;
-			neededChar[s2[left]]++;
-			left++;
+	while (j_pointer < s2.length) {
+		freqS2[s2.charCodeAt(j_pointer) - 'a'.charCodeAt(0)]++;
+		if (j_pointer - i_pointer + 1 == s1.length) {
+			if (checkFrequency(freqS1, freqS2)) {
+				return true;
+			}
+		}
+		if (j_pointer - i_pointer + 1 < s1.length) j_pointer++;
+		else {
+			freqS2[s2.charCodeAt(i_pointer) - 'a'.charCodeAt(0)]--;
+			i_pointer++;
+			j_pointer++;
 		}
 	}
 	return false;
 };
 
-checkInclusion("ab" , "eidbaooo");
+const checkFrequency = function (a, b) {
+	for (let i = 0; i < 26; i++) {
+		if (a[i] !== b[i]) return false
+	}
+	return true;
+}
+
+
+checkInclusion("ab", "eidbaooo");
