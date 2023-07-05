@@ -17,3 +17,5 @@ var containsNearbyDuplicate = function (nums, k) {
     }
 return false;
 };
+
+// Complexity O(N)
