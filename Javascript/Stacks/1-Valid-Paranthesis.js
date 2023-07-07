@@ -21,3 +21,5 @@ var isValid = function (s) {
 return !stack.length;
 }
 isValid("{[]}")
+
+// Complexity O(N)
