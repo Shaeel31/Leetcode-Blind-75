@@ -4,43 +4,35 @@
  * @return {string}
  */
 function minWindow(s, t) {
-    if (t === "") return "";
-
-    let countT = {};
-    let window = {};
-    for (let c of t) {
-        countT[c] = 1 + (countT[c] || 0);
+    let aHash = {}
+    let bHash = {}
+    for (let i = 0; i < t.length; i++) {
+        bHash[t[i]] = (bHash[t[i]] || 0) + 1
     }
+    let left = 0;
+    let res = [-1, -1]
+    let minLengthSubstring = Infinity
+    let have = 0; need = Object.keys(bHash).length;
+    for (let j = 0; j < s.length; j++) {
+        let cr = s[j];
+        aHash[cr] = (aHash[cr] || 0) + 1
+        if (cr in bHash && bHash[cr] == aHash[cr]) have += 1;
 
-    let have = 0;
-    let need = Object.keys(countT).length;
-    let res = [-1, -1];
-    let resLen = Infinity;
-    let l = 0;
-
-    for (let r = 0; r < s.length; r++) {
-        let c = s[r];
-        window[c] = 1 + (window[c] || 0);
-
-        if (c in countT && window[c] === countT[c]) {
-            have += 1;
+        while (have == need) {
+            if (j - left + 1 < minLengthSubstring) {
+                minLengthSubstring = j - left + 1
+                res = [left, j]
+            }
+            aHash[s[left]] -= 1
+            if (s[left] in bHash && aHash[s[left]] < bHash[s[left]]) {
+                have -= 1
+            }
+            left++
         }
 
-        while (have === need) {
-            if (r - l + 1 < resLen) {
-                res = [l, r];
-                resLen = r - l + 1;
-            }
-            window[s[l]] -= 1;
-            if (s[l] in countT && window[s[l]] < countT[s[l]]) {
-                have -= 1;
-            }
-            l += 1;
-        }
     }
-
-    let [left, right] = res;
-    return resLen !== Infinity ? s.substring(left, right + 1) : "";
+    let [begin, end] = res
+    return s.substring(begin, end + 1)
 }
 
-// Complexity O(M + N)
+minWindow("ADOBECODEBANC", "ABC")
