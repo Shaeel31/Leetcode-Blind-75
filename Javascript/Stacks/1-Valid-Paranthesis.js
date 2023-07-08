@@ -3,23 +3,24 @@
  * @return {boolean}
  */
 var isValid = function (s) {
-    const stack = [];
-    const map = {
-      '(': ')',
-      '[': ']',
-      '{': '}'
+  const stack = []
+  let paranthesis = {
+    '{': '}',
+    '[': ']',
+    '(': ')'
+  }
+
+  for (let i = 0; i < s.length; i++) {
+    let c = s[i];
+    if (paranthesis[c]) {
+      stack.push(paranthesis[c]);
     }
-    
-    for (let i = 0 ; i < s.length ; i++) {
-        let c = s[i];
-        if (map[c]) {
-          stack.push(map[c])
-        } else if (c !== stack.pop()) {
-          return false;
-        } 
+    else if (stack.pop() !== c) {
+      return false;
+    }
+  }
+  return !stack.length
 }
-return !stack.length;
-}
-isValid("{[]}")
+isValid("()[]{}")
 
 // Complexity O(N)
