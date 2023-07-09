@@ -12,3 +12,5 @@ var findMin = function (nums) {
       }
       return nums[l];
     };
+
+    // Complexity O(log n)
