@@ -3,15 +3,33 @@
  * @return {number}
  */
 var findMin = function (nums) {
-    let l = 0;
-      let r = nums.length - 1;
-      while (l < r) {
-        const m = ~~((l + r) / 2);
-        if (nums[m] > nums[r]) l = m + 1;
-        else r = m;
-      }
-      return nums[l];
-    };
+  if (!nums.length) return false;
+  if (nums.length == 1) return nums[0];
 
-    // Time Complexity O(log n)
-    // Space Complexity O(N)
+  let left = 0;
+  let right = nums.length - 1;
+
+  while (left < right) {
+    let mid = Math.ceil(left + (right - left) / 2);
+    /* If the midpoint element is less than the previous element it means that
+       we have reached the minimum element as in a already sorted array which is 
+       sorted in ascending order it is not possble that the previous element
+       is greater than the next element */
+    if (nums[mid] < nums[mid - 1]) {
+      return nums[mid];
+    }
+    /* Check if the left side of array is sorted in increasing order 
+       and the middle element is greater than the last element 
+       which means that right side is not sorted */
+
+    if (nums[left] < nums[mid] && nums[mid] > nums[right]) {
+      left = mid + 1;
+    }
+    else {
+      right = mid - 1
+    }
+  }
+  return nums[left]; // return the value of left in case the array is already rotated in ascending order and is rotated n times
+};
+
+findMin([2, 1])
