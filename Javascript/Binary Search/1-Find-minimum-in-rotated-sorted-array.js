@@ -11,6 +11,7 @@ var findMin = function (nums) {
 
   while (left < right) {
     let mid = Math.ceil(left + (right - left) / 2);
+
     /* If the midpoint element is less than the previous element it means that
        we have reached the minimum element as in a already sorted array which is 
        sorted in ascending order it is not possble that the previous element
@@ -29,7 +30,12 @@ var findMin = function (nums) {
       right = mid - 1
     }
   }
-  return nums[left]; // return the value of left in case the array is already rotated in ascending order and is rotated n times
+  /*  return the value of left in case the array is rotated n 
+      times means that we have already the minimum
+      element pressent at the begining */
+  return nums[left];
 };
 
-findMin([2, 1])
+findMin([11, 13, 15, 17])
+
+// Complexity 0(log n)
