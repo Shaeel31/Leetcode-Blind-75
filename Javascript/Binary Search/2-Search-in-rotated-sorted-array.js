@@ -37,6 +37,7 @@ var search = function (nums, target) {
 search([4, 5, 6, 7, 8, 1, 2, 3], 8);
 
 
+// Time Complexity O(log N)
 
         // if (target > nums[mid] && target <= nums[r]) {
         //     l = mid + 1;
