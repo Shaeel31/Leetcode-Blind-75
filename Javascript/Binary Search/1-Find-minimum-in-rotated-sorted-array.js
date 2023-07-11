@@ -32,7 +32,11 @@ var findMin = function (nums) {
   }
   /*  return the value of left in case the array is rotated n 
       times means that we have already the minimum
-      element pressent at the begining */
+      element pressent at the begining 
+
+   It also means that the while loop condition while (left < right) is 
+      is failed and now the smallest most element is present 
+      on the left most side    */
   return nums[left];
 };
 
