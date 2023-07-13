@@ -44,6 +44,8 @@ function mergeList(l1, l2) {
     if (l2) {
       tail.next = l2;
     }
+
+    // return dummy.next as we have to return the head of the list
   
     return dummy.next;
   }
