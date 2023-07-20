@@ -22,3 +22,5 @@ var maxArea = function (height) {
     }
     return max_height
 };
+
+// Complexity O(n)
