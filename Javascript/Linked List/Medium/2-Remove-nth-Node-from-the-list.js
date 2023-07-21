@@ -27,3 +27,5 @@ var removeNthFromEnd = function (head, n) {
    
        return dummy_head.next
    }
+
+   // Complexity O(N)
