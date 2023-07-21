@@ -24,3 +24,4 @@ var maxArea = function (height) {
 };
 
 // Complexity O(n)
+// space complexity o(n)
