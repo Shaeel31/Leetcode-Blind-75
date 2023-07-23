@@ -15,4 +15,4 @@ var maxDepth = function (root) {
     return Math.max(maxDepth(root.left) , maxDepth(root.right)) + 1
 };
 
-// Complexity O(N)
+// Complexity O(N) as we will be visiting every node in order to get to the last node of the given tree
