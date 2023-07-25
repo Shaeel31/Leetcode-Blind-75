@@ -27,3 +27,6 @@ var lowestCommonAncestor = function (root, p, q) {
         }
     }
 };
+
+// Complexity O(log N)
+
