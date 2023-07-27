@@ -13,6 +13,7 @@
 var invertTree = function (root) {
     if (!root) return null;
 
+    // invert the root nodes left and right child and keep on repeating until we reach the end node and return it.
     let temp = root.left;
     root.left = root.right
     root.right = temp;
@@ -23,4 +24,4 @@ var invertTree = function (root) {
 
 };
 
-// Time Complexity O(N)
+// Time Complexity O(N) 
