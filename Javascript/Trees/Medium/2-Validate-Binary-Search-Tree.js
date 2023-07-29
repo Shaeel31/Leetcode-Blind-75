@@ -25,3 +25,5 @@ const validate = function (root, min, max) {
 
     return validate(root.left, min, root.val) && validate(root.right, root.val, max);
 };
+
+// Complexity O(N) 
