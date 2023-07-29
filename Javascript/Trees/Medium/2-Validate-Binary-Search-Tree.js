@@ -10,6 +10,17 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
+
+// Important Notes
+
+// We maintain a range when ever we go to the left or right nodes of the tree
+// whenever we go to the left only max value is updated as in a BST all values to the
+// left must be less than the root node. The max value is set to the root node.
+
+// whenever we go to the right only min value is updated as in a BST all values to the
+// right must be greater than the root node. The min value is set to the root node.
+
+// Recurssion is used and whenever recursion is used first of all we satisfy base cases.
 var isValidBST = function (root) {
     return validate(root, Number.NEGATIVE_INFINITY, Number.POSITIVE_INFINITY);
 };
