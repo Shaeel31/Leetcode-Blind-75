@@ -37,4 +37,5 @@ const validate = function (root, min, max) {
     return validate(root.left, min, root.val) && validate(root.right, root.val, max);
 };
 
-// Complexity O(N) 
+// Complexity O(N)  
+// Reason : As we have to traverse all the nodes on the left sub tree and right sub tree
