@@ -24,4 +24,4 @@ var invertTree = function (root) {
 
 };
 
-// Time Complexity O(N) 
+// Time Complexity O(N)  as we have to visit all the node of the tree and invert them
