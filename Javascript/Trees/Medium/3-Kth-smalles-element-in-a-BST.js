@@ -12,14 +12,7 @@
  * @return {number}
  */
 
-// Important : We keep on going to the left until we reach the null node.
-// The current elemtent is pushed on to the stack to keep track of the root node
-// when ever we reach the null node we pop the element because it is the root of that 
-// subtree and we go to the right.
 
-// Apporach used : Iterative
-
-// Refrence : https://www.youtube.com/watch?v=5LUXSvjmGCw&ab_channel=NeetCode
 var kthSmallest = function (root, k) {
     let stack = [];
     let curr = root;
@@ -39,3 +32,12 @@ var kthSmallest = function (root, k) {
 
 
 // Complexity O(n) - as we have to visit all the nodes of a BST
+
+// Important Notes: We keep on going to the left until we reach the null node.
+// The current elemtent is pushed on to the stack to keep track of the root node
+// when ever we reach the null node we pop the element because it is the root of that 
+// subtree and we go to the right.
+
+// Apporach used : Iterative
+
+// Refrence : https://www.youtube.com/watch?v=5LUXSvjmGCw&ab_channel=NeetCode
