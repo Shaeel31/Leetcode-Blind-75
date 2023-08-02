@@ -31,3 +31,6 @@ var levelOrder = function (root) {
     }
     return resultant;
 };
+
+// Complexity O(N) 
+// Reason : we will be visiting every node at once
