@@ -20,3 +20,6 @@ const reverse = function (nums, start, end) {
     return nums;
 
 }
+
+// Complexity O(N)
+// Space Complexity O(1) as we use the same array
