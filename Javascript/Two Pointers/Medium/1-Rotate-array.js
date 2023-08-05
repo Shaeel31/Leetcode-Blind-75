@@ -21,5 +21,22 @@ const reverse = function (nums, start, end) {
 
 }
 
+// Important Notes : 
+
+// So the Trick is we rotate the array 3 times 
+// 1st Step : The entire array is reversed.
+
+// Given array : [1,2,3,4,5,6,7]
+// O/P : [7,6,5,4,3,2,1]
+
+// 2nd Step : We reverse the array from 0th index to k index 
+
+// Given array : [7,6,5,4,3,2,1]
+// O/P : [5,6,7,4,3,2,1]
+
+// 3rd Step : We reverse the array from k index to the last index 
+// Given array : [5,6,7,4,3,2,1]
+// O/P : [5,6,7,1,2,3,4]
+
 // Complexity O(N)
 // Space Complexity O(1) as we use the same array
