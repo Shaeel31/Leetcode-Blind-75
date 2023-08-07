@@ -40,5 +40,5 @@ const reverse = function (nums, start, end) {
 
 // Complexity O(N)
 // Space Complexity O(1) as we use the same array
-// Time complexity is  O(k) as well have to visit the array at most k times
+// Time complexity is  O(k) as well have to visit the array at most k times.
  
