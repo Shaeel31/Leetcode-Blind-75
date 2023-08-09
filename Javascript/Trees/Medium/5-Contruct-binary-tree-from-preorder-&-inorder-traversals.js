@@ -32,4 +32,6 @@ var buildTree = function(preorder, inorder) {
        return root;
    };
 
+   buildTree()
+
    //Complexity : O(N)
