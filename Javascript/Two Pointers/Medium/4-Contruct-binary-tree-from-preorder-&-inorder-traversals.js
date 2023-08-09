@@ -15,10 +15,16 @@ var buildTree = function(preorder, inorder) {
     if (!preorder.length || !inorder.length) {
            return null;
        }
-   
+   // Get the root node as in preorder the first node is always the root node
        let root = new TreeNode(preorder[0]);
-       let mid = inorder.findIndex(x => x == preorder[0]);
+       
+   // Find that node in the inorder tree and once that root is found all the elements to its left belong to the left sub tree
+   // And all the elements to it's right belong to the right sub tree
    
+       let mid = inorder.findIndex(x => x == preorder[0]);
+
+       
+       // Use the recursive approach and keep on calling the function to make left and right sub trees
        root.left = buildTree(preorder.slice(1, mid + 1), inorder.slice(0, mid));
        root.right = buildTree(preorder.slice(mid + 1), inorder.slice(mid + 1));
        return root;
