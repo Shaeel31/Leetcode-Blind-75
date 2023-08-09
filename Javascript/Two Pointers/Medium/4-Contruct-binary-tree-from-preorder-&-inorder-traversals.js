@@ -27,6 +27,8 @@ var buildTree = function(preorder, inorder) {
        // Use the recursive approach and keep on calling the function to make left and right sub trees
        root.left = buildTree(preorder.slice(1, mid + 1), inorder.slice(0, mid));
        root.right = buildTree(preorder.slice(mid + 1), inorder.slice(mid + 1));
+
+       // The root is returned at the end as we have to return the root of newly created tree
        return root;
    };
 
