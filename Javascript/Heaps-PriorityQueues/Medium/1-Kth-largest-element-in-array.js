@@ -13,3 +13,6 @@ var findKthLargest = function(nums, k) {
     }
     return element;
 };
+
+
+// Complexity of a binary search is O(logn)
