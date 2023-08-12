@@ -23,3 +23,5 @@ KthLargest.prototype.add = function(val) {
     if (this.pqAsHeap.size() > this.k) this.pqAsHeap.dequeue(); // maintain top k
     return this.pqAsHeap.front().element; // top of heap = front of priority queue
 };
+
+// Complexity O(logn)
