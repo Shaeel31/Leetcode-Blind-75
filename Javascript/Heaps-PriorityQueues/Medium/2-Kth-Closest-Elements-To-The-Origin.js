@@ -1,6 +1,7 @@
 // As in Javascript there are no built in Min Heaps so we make a Min Heap Class
 
 
+
 class MinHeap {
     constructor() {
         this.heap = [];
@@ -61,15 +62,24 @@ class MinHeap {
     }
 }
 
+// The function implements the K Closest elements to the origin problem 
 var kClosest = function (points, k) {
+    // we define a min heap and take the distances between elements as the
+    // coordinates with the smallest disatances will be closest 
+    // to the origin 
     let heap = new MinHeap();
     let coordinates = [];
     for (const [x, y] of points) {
-        let dist = x ** 2 + y ** 2;
-        coordinates.push([dist, x, y]);
+        let distances = x ** 2 + y ** 2;
+        coordinates.push([distances, x, y]);
     }
+
+    // All the coordinates along with there distances are added to the HEAP.The reason to add the distance 
+    // along with the coordinates is that the Min Heap will order them according to its property from smallest
+    // to greater
     coordinates.forEach(x => heap.enqueue(x));
 
+    // We than start poping from the HEAP as the smallest distance elements would be at the top and pop unitil k = 0
     let res = [];
     while (k > 0) {
         res.push(heap.dequeue().slice(1));
