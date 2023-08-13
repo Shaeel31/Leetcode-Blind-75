@@ -1,3 +1,6 @@
+// As in Javascript there are no built in Min Heaps so we make a Min Heap Class
+
+
 class MinHeap {
     constructor() {
         this.heap = [];
@@ -76,3 +79,7 @@ var kClosest = function (points, k) {
 };
 
 kClosest([[1,3],[-2,2]], 1)
+
+
+// Important Notes : 
+
