@@ -2,6 +2,16 @@
  * @param {number[]} height
  * @return {number}
  */
+
+// Important Notes : 
+
+// Take the maximum value for all indexes from  left to right 
+// Take the maximum value for all indexes from  right to left
+
+// Take the min of left and right maximum values for each index and add them
+// Formula = Min(l,r) -height[i] 
+
+
 var trap = function (height) {
     let lp = new Array(height.length).fill(0);
     let rp = new Array(height.length).fill(0);
