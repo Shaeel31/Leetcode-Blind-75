@@ -37,5 +37,5 @@ var trap = function (height) {
 
 trap()
 
-// Time Complexity O(N)
+// Time Complexity O(N) 
 // Space Complexity O(N)
