@@ -30,3 +30,5 @@ function leastInterval(tasks , n) {
     }
     return tasks.length + idleCount;
 }
+
+//Time Complexity O(N * 26)
