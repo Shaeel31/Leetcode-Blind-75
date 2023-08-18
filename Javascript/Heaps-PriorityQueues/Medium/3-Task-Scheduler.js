@@ -1,34 +1,17 @@
-function leastInterval(tasks , n) {
-    const charMap = new Map();
-    let maxCharCount = 0;
-    let maxChar = tasks[0];
+function leastInterval(tasks, n) {
+    const charMap = new Array(26).fill(0);
+    for (const task of tasks) {
+        charMap[task.charCodeAt(0) - 'A'.charCodeAt(0)]++;
+    }
+    charMap.sort((a, b) => b - a);
+    const maxVal = charMap[0] - 1;
+    let idleSlots = maxVal * n;
 
-    for (let char of tasks) {
-        charMap.set(char, (charMap.get(char) || 0) + 1);
-        if (charMap.get(char) > maxCharCount) {
-            maxCharCount = charMap.get(char);
-            maxChar = char;
-        }
+    for (let i = 1; i < charMap.length; i++) {
+        debugger
+        idleSlots -= Math.min(charMap[i], maxVal);
     }
 
-    let idleCount = (maxCharCount - 1) * n;
-
-    charMap.forEach((count, char) => {
-        // 'return' inside forEach() serve as 'continue'
-        if (char === maxChar) {
-            return;
-        }
-        if (count === maxCharCount) {
-            idleCount -= count - 1;
-        } else {
-            idleCount -= count;
-        }
-    });
-
-    if (idleCount <= 0) {
-        return tasks.length;
-    }
-    return tasks.length + idleCount;
+    return idleSlots > 0 ? idleSlots + tasks.length : tasks.length;
 }
-
 //Time Complexity O(N * 26)
