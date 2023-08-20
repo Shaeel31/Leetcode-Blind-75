@@ -49,3 +49,6 @@ var getOrder = function(tasks) {
     // Finally, the function returns the array 'a' which contains the indices of tasks in the order they were processed.
 };
 
+// Library used for MinPriorityQueue
+// https://github.com/datastructures-js/priority-queue
+
