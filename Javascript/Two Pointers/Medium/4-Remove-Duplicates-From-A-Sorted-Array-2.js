@@ -21,3 +21,6 @@ var removeDuplicates = function (nums) {
     }
     return nums.length;
 };
+
+// Time Complexity  O(N)
+// Space Complexity O(N)
