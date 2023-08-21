@@ -22,3 +22,5 @@ SeatManager.prototype.reserve = function() {
 SeatManager.prototype.unreserve = function(seatNumber) {
     this.arr.splice(this.bin(seatNumber), 0, seatNumber);
 };
+
+// Complexity O(logN)
