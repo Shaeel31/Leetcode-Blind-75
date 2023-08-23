@@ -4,8 +4,8 @@ var SeatManager = function(n) {
     for (let i = 1; i <= n; i++) this.arr.push(i);
 };
 SeatManager.prototype.bin = function(val) {
-    let l = 0;
-    let h = this.arr.length;
+        let l = 0;
+        let h = this.arr.length;
     while (l < h) {
         let m = (l + h) >> 1;
         if (this.arr[m] < val) {
