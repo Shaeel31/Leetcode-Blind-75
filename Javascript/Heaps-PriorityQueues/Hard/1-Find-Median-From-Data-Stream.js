@@ -49,9 +49,20 @@ MedianFinder.prototype.findMedian = function () {
     }
 };
 
-/** 
- * Instantiate and call MedianFinder as shown.
- * var obj = new MedianFinder()
- * obj.addNum(num)
- * var median = obj.findMedian()
- */
+// Complexity Analysis 
+
+/*
+Adding a Number (addNum method):
+
+Enqueuing into the priority queues (this.min and this.max) takes O(log N) time, where N is the number of elements in the queue.
+Balancing the sizes of the queues involves potential dequeuing and re-enqueuing, which takes O(log N) time.
+The code uses both the enqueue and dequeue operations at most a constant number of times per addition.
+Overall, the time complexity for adding a number is O(log N), where N is the number of elements in the priority queues.
+Finding Median (findMedian method):
+
+Checking the sizes of the queues and returning the median takes constant time operations (comparisons and arithmetic).
+The time complexity for finding the median is O(1).
+Considering both operations, the overall time complexity for adding a number and finding the median in this code is O(log N), where N is the number of elements in the priority queues.
+
+The space complexity of the code is O(N), where N is the number of elements stored in the priority queues. This is because the code maintains two priority queues to store the input numbers.
+*/
