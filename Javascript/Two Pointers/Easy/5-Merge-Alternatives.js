@@ -17,3 +17,5 @@ var mergeAlternately = function (word1, word2) {
     
         return el;
 }
+
+// Complexity = O([Greater word length])
