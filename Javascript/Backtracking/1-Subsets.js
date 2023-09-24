@@ -46,7 +46,7 @@ The condition i >= len(nums) is true, so the current subset [1, 2, 3] is appende
 The function returns.
 
 The third call returns:
-nums[2] is removed from subset which is now [1, 2].
+nums[2] is removed from subset which is now [1, 2]. -----------------------------------------------------------------------------------
 A new call is made to dfs(3).
 
 The fifth call: dfs(3):
